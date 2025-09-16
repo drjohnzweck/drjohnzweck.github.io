@@ -1,0 +1,378 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang=en>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>John Zweck, Math 4355</title>
+</head>
+<body bgcolor = "#FFFFFF">
+
+<br>
+<h1 ALIGN=CENTER> <font size="+3"> Math 4355, Spring 2022</font></h1>
+<h1 ALIGN=CENTER> <font size="+2"> Methods of Applied Mathematics</font></h1>
+
+
+<h2 ALIGN=CENTER> <font size="+2"> John Zweck</font></h2>
+
+<br><br>
+<CENTER>
+<b>
+For starred problems, see hints at the bottom of this page.<br>
+L4H4.7A means go to Lecture 4 and find the problem label Hwk 4.7A. <br> 
+L12CScI means go to Section C of Lecture 12 and do the Scaffolded Problem I </b>
+<br>
+<b>When you solve hwk problems, you should only use results from the section of the book the problem comes from, or from previous sections. Do not use results we have not yet discussed that you recall from your Linear Algebra course.
+</b> 
+</CENTER>
+
+<BR><BR>
+<TABLE BORDER=1 WIDTH = "100%">
+<CAPTION><FONT SIZE = "+2"><B>
+Schedule</B></FONT></CAPTION>
+  <TR>
+      <TH>Date</TH>
+      <TH>Section <BR> [of Meyer unless <BR> otherwise indicated]</TH>
+	<TH>Topic</TH>
+      <TH>Homework</TH>
+      <TH>Homework Due Date</TH>
+  </TR>
+
+  <TR>
+      <TD><CENTER> -  </CENTER></TD>
+      <TD><CENTER> 1.2, 1.3, <br> 2.1-2.5, 3.2   </CENTER></TD>
+      <TD> <CENTER> Review for self <br> (grey boxes)  </CENTER>    </TD>
+      <TD> <CENTER> 1.2.1, 1.2.8, 1.2.9, 1.3.1, 2.1.1ab, 2.2.1.a, 2.5.1ab, 3.2.3  </CENTER>    </TD>
+      <TD> <CENTER> Th Jan 27  </CENTER>   </TD>
+  </TR>
+
+ <TR>
+      <TD><CENTER> W Jan 19  </CENTER></TD>
+      <TD><CENTER> Day One <br> 4.1 </CENTER></TD>
+      <TD> <CENTER> Subspaces  </CENTER>    </TD>
+      <TD> <CENTER> 4.1: 1cde*, 2acfh, 6de*, 9, 11*  </CENTER>    </TD>
+      <TD> <CENTER> Th Jan 27  </CENTER>   </TD>
+  </TR>
+
+  <TR>
+      <TD><CENTER> M Jan 24 </CENTER></TD>
+      <TD><CENTER> 3.3-3.6  </CENTER></TD>
+      <TD> <CENTER> Linear Transformations <BR> Matrix Algebra  </CENTER>    </TD>
+      <TD> <CENTER> 3.2.6*,  3.3.1adf <br> 3.5.2, 3.5.3*, 3.5.4, 3.5.7, <br>
+                    3.6.1, 3.6.2, 3.6.5*
+           </CENTER>    </TD> 
+      <TD> <CENTER>Th Feb 3  </CENTER>   </TD>
+  </TR>
+
+  <TR>
+      <TD><CENTER> W Jan 26 </CENTER></TD>
+      <TD><CENTER> 2.1, 2.2<BR> 3.9  </CENTER></TD>
+      <TD> <CENTER> Row Echelon Forms, Rank  <BR> Elementary Matrices </CENTER>    </TD>
+      <TD> <CENTER>  2.1.5, 2.4.4, 2.4.5</CENTER>    </TD> 
+      <TD> <CENTER>Th Feb 3  </CENTER>   </TD>
+  </TR>
+
+
+  <TR>
+      <TD><CENTER> M Jan 31 </CENTER></TD>
+      <TD><CENTER> 2.4<BR> 4.2  </CENTER></TD>
+      <TD> <CENTER> Homogeneous Systems <BR> Nullspace </CENTER>    </TD>
+      <TD> <CENTER> - </CENTER>    </TD>
+      <TD> <CENTER>Th Feb 10  </CENTER>   </TD>
+  </TR>
+
+  <TR>
+      <TD><CENTER> W Feb 2 </CENTER></TD>
+      <TD><CENTER> 2.5<BR> 3.7  <BR> 3.9 <BR> 4.2  </CENTER></TD>
+      <TD> <CENTER> Nonhomogeneous Systems, Range <BR> Matrix Inversion <BR>Rank Normal Form
+                    <BR> Four Fundamental Subspaces </CENTER>    </TD>
+      <TD> <CENTER> 3.7: 3,8 <BR> 3.9: 1, 2, 4, 6* <br> 4.2: 1,2*,3,7*,10,12</CENTER>    </TD>                       
+      <TD> <CENTER>Th Feb 10  </CENTER>   </TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M Feb 7 </CENTER></TD>
+     <TD><CENTER> 4.3 </CENTER></TD>
+     <TD><CENTER> Linear Independence </CENTER></TD>
+    <TD><CENTER>  2,6*,7,10*,12 <BR> <a href="./Hwk/FSS.pdf">Matlab Hwk #A (Due Feb 27)</a> </CENTER></TD>  
+     <TD><CENTER> Th Feb 17  </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> W Feb 9 </CENTER></TD>
+     <TD><CENTER> 4.4 </CENTER></TD>
+   <TD><CENTER> Basis, Dimension  </CENTER></TD>
+     <TD><CENTER> 1,4,5,8,9 </CENTER></TD>
+     <TD><CENTER> Th Feb 17  </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M Feb 14 </CENTER></TD>
+     <TD><CENTER> - <BR> 4.7 </CENTER></TD>
+     <TD><CENTER> Matlab Demo <BR> Linear Transformations </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Th Feb 24 </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> W Feb 16 </CENTER></TD>
+     <TD><CENTER> 4.7 </CENTER></TD>
+     <TD><CENTER> Linear Transformations </CENTER></TD>
+     <TD><CENTER> L4H4.7A, 6, 8, 9, 10, 12b,13,19 </CENTER></TD>
+     <TD><CENTER> Th Feb 24 </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M Feb 21 </CENTER></TD>
+     <TD><CENTER> 4.8 </CENTER></TD>
+     <TD><CENTER> Change of Basis<br>Similarity </CENTER></TD>
+     <TD><CENTER> 1,3,5,8,12 </CENTER></TD>
+     <TD><CENTER> Th Mar 3 </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> W Feb 23 </CENTER></TD>
+     <TD><CENTER> 5.3<BR> 5.4 </CENTER></TD>
+     <TD><CENTER> Inner Product Spaces <BR> Orthogonal Vectors</CENTER></TD>
+     <TD><CENTER> 5.3: 1*, 2, 4 <BR> 5.4: 3, 4,  12, 14, 15 </CENTER></TD>
+     <TD><CENTER> Th Mar 10  </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M Feb 28 </CENTER></TD>
+     <TD><CENTER> 5.5 </CENTER></TD>
+     <TD><CENTER> Gram-Schmidt </CENTER></TD>
+     <TD><CENTER>  1ab, 2, 3,  5, 11 </CENTER></TD>
+     <TD><CENTER> Th Mar 10 </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> W Mar 2 </CENTER></TD>
+     <TD><CENTER> 5.6 </CENTER></TD>
+     <TD><CENTER> Unitary and Orthogonal Matrices </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> F-Su Mar 4-6 </CENTER></TD>
+     <TD><CENTER> EXAM 1 </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> -  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+ 
+
+ <TR>
+     <TD><CENTER> M Mar 7 </CENTER></TD>
+     <TD><CENTER> 5.6 </CENTER></TD>
+     <TD><CENTER> Unitary and Orthogonal Matrices </CENTER></TD>
+     <TD><CENTER> L8H5.6AA, L8H5.6A, L8H5.6B, L8H5.6C, <BR>
+                  1, 2, 3, 5, 13, 18 <BR>
+                  <a href="./Hwk/GS.pdf">Matlab Hwk #B (Due Apr 6)</a> </CENTER></TD>
+     <TD><CENTER> M Mar 28 </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> W Mar 9 </CENTER></TD>
+     <TD><CENTER> 5.9 </CENTER></TD>
+     <TD><CENTER> Complementary Subspaces </CENTER></TD>
+     <TD><CENTER> L9H5.9A <BR> 1, 4, 5, 7, 11 </CENTER></TD>
+     <TD><CENTER> M Mar 28 </CENTER></TD>
+  </TR>
+
+
+<TR>
+     <TD><CENTER> SPRING <BR>BREAK </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER>-</CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER>- </CENTER></TD>
+  </TR>
+
+
+<TR>
+     <TD><CENTER> M Mar 21</TD>
+     <TD><CENTER> 5.11 </CENTER></TD>
+     <TD><CENTER>Orthogonal Decomposition</CENTER></TD>
+     <TD><CENTER> 1,3,4,5,11 <BR>
+                  </CENTER></TD>
+     <TD><CENTER> Th Apr 7 </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> W Mar 23 </CENTER></TD>
+     <TD><CENTER> 7.1 </CENTER></TD>
+     <TD><CENTER>Eigensystems</CENTER></TD>
+     <TD><CENTER> L12CSc, L12ESc1, L12ESc2, L12ESc3,    
+                   <br> 1bd, 8, 9, 10, 15 </CENTER></TD>
+     <TD><CENTER>Th Apr 7 </CENTER></TD>
+  </TR>
+
+
+ <TR>
+<TD><CENTER> M Mar 28 </CENTER></TD>
+     <TD><CENTER> 7.2 </CENTER></TD>
+     <TD><CENTER> Diagonalization </CENTER></TD>
+     <TD><CENTER> L13BScI, L13BScII, L13BScIII
+                  L13ESc <BR> 3, 5, 6  </CENTER></TD>
+     <TD><CENTER> W Apr 13 </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> W Mar 30 </CENTER></TD>
+     <TD><CENTER> 7.5</CENTER></TD>
+     <TD><CENTER> Spectral Theorem for Normal Matrices</CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> M Apr 4 </CENTER></TD>
+     <TD><CENTER> 7.5</CENTER></TD>
+     <TD><CENTER> Spectral Theorem for Normal Matrices</CENTER></TD>
+     <TD><CENTER> L14ScB, L14ScC <br> 1,3,13a </a> </CENTER></TD>
+     <TD><CENTER> W Apr 13 </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> W Apr 6 </CENTER></TD>
+     <TD><CENTER> 7.3 <BR> 7.4 </CENTER></TD>
+     <TD><CENTER> Functions of Diagonalizable Matrices <BR>
+                  Matrix Exp and ODEs</CENTER></TD>
+     <TD><CENTER> L16ExA, L16ExB <br> 7.3: 3, 6 <BR> 7.4: 1 <br>
+                  <a href="./Hwk/SM.pdf">Matlab Hwk #C (Due Apr 29)</a> </CENTER></TD>
+     <TD><CENTER> Th Apr 21 </CENTER></TD>
+  </TR>
+
+<TR>
+<TD><CENTER> M Apr 11 </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Fourier Series I </CENTER></TD>
+     <TD><CENTER> -  </CENTER></TD>
+     <TD><CENTER> -</CENTER></TD>
+  </TR>
+
+<TR>
+<TD><CENTER> W Apr 13 </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Fourier Series I </CENTER></TD>
+     <TD><CENTER> <a href="./Hwk/HwkFS1.pdf">FS Hwk #1 [pdf]</a>  </CENTER></TD>
+     <TD><CENTER> Th Apr 21</CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> F-Su Apr 15-17   </CENTER></TD>
+     <TD><CENTER> EXAM 2 </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> -  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M Apr 18  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Fourier Series IIA </CENTER></TD>
+     <TD><CENTER> - <!-- <a href="./Hwk/HwkFS1.pdf"> Hwk on Fourier Series # I [pdf]</a>-->  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> W Apr 20  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Fourier Series IIB </CENTER></TD>
+     <TD><CENTER> <a href="./Hwk/HwkFS2.pdf">FS Hwk #2 [pdf]</a> <BR>
+                                  <a href="./Hwk/Fourier.pdf">Matlab Hwk #D (Due May 5, Extra Credit)</a> </CENTER></TD>
+     <TD><CENTER> Th Apr 28 </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M Apr 25  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Fourier Series III </CENTER></TD>
+     <TD><CENTER> - <!-- <a href="./Hwk/HwkFS2.pdf"> Hwk on Fourier Series # II [pdf]</a> --> </CENTER></TD>
+     <TD><CENTER> Th May 5 </CENTER></TD>
+  </TR>
+
+<TR>
+     <TD><CENTER> W Apr 27  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Discrete Fourier Transform </CENTER></TD>
+     <TD><CENTER> <a href="./Hwk/HwkFS3.pdf">FS Hwk #3 [pdf] </a>  </CENTER></TD>
+     <TD><CENTER> Th May 5 </CENTER></TD>
+  </TR>
+
+ <TR>
+     <TD><CENTER> M May 2  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+     <TD><CENTER> Filtering and Convolution </CENTER></TD>
+     <TD><CENTER> -  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+
+ <TR>
+     <TD><CENTER> W May 4  </CENTER></TD>
+          <TD><CENTER> - </CENTER></TD>
+ <TD><CENTER> Fourier Series IV </CENTER></TD>
+     <TD><CENTER> -  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+
+
+ <TR>
+     <TD><CENTER>W May 11-F May 13 </CENTER></TD>
+     <TD><CENTER> FINAL </CENTER></TD>
+     <TD><CENTER> -</CENTER></TD>
+     <TD><CENTER> -  </CENTER></TD>
+     <TD><CENTER> - </CENTER></TD>
+  </TR>
+
+
+</TABLE>
+
+<BR><BR>
+
+<CENTER><b>Homework Hints</b></CENTER>
+
+<br>
+
+<ul>
+<li> 4.1.1: For this and other problems in which you have to identify whether a statement is true or not, 
+either prove the statement is true or provide a simple counterexample with accompanying explanation. 
+
+<li> 4.1.11: To show two sets are equal show every element of one set is contained in the other, and vice-versa. 
+Convert statements about sets into equations inviolving vectors in those sets. 
+
+<li> 
+3.2.6b: This is analogous to the proof that any function can be uniquely expressed as the sum of an odd and an even 
+function. Hint for uniqueness: Show that if a square matrix is both symmetric and skew-symmetric then it is zero.   
+You can do this just using matrix algebra, that is working with the matrix as an entity on its own right. 
+It is not necessary to manipulate the entries of the matrix.
+
+<li> 4.1.6de: See Example 4.1.7 Meyer pages 165-166.
+
+<li> 3.5.3: Use the grey box on Meyer page 98.
+
+<li> 3.6.5: See hint to 4.1.1
+
+<li> 3.9.6: See hint to 4.1.1
+
+<li> 4.2.2b: Here is a rephrasing of the question in case you need it. Suppose that Ax=b is consistent.
+Prove that Ax=b has  a unique solution if and only if N(A) = {0}.
+
+<li> 4.2.7: Show that if Ax=0 then the length of x is zero. 
+
+<li> 4.3.6: First understand why result is true in 3x3 case. Then prove in general.
+
+<li> 4.3.10: Find a vector in the nullspace of A
+
+<li> 5.3.1: See hint to 4.1.1
+
+
+</ul>
+
+</BODY>
+</html>
+
+
+
