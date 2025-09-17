@@ -1,0 +1,278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11519,        269]
+NotebookOptionsPosition[     11226,        254]
+NotebookOutlinePosition[     11581,        270]
+CellTagsIndexPosition[     11538,        267]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "This", " ", "Mathematica", " ", "code", " ", "was", " ", "written", " ", 
+    "by", " ", "John", " ", "Zweck", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"zweck", "@", "utdallas"}], ".", "edu"}], ")"}], " ", "and", 
+    " ", "generates", " ", "a", " ", "mathematical", " ", 
+    RowBox[{"curve", "/", "surface"}], " ", "that", " ", "can", " ", "be", 
+    " ", "printed", " ", "using", " ", "a", " ", "3", "D", " ", 
+    RowBox[{"printer", ".", " ", "This"}], " ", "model", " ", "can", " ", 
+    RowBox[{"(", "probably", ")"}], " ", "be", " ", "printed", " ", "by", " ", 
+    RowBox[{"Shapeways", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "If", " ", "you", " ", "evaluate", " ", "this", " ", "Mathematica", " ", 
+     "notebook"}], ",", 
+    RowBox[{"the", " ", 
+     RowBox[{"curve", "/", "surface"}], " ", "will", " ", "be", " ", 
+     "rendered", " ", "using", " ", "computer", " ", 
+     RowBox[{"graphics", "."}]}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "If", " ", "you", " ", "uncomment", " ", "the", " ", "export", " ", "line",
+     " ", "at", " ", "the", " ", "end", " ", "of", " ", "the", " ", "code", 
+    " ", "and", " ", "set", " ", "the", " ", "directory", " ", "path", " ", 
+    "appropriately", " ", "for", " ", "your", " ", "system", " ", "you", " ", 
+    "will", " ", "obtain", " ", "an", " ", "STL", " ", "file", " ", "that", 
+    " ", "can", " ", "be", " ", "sent", " ", "to", " ", "a", " ", "3", "D", 
+    " ", 
+    RowBox[{"printer", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "STL", " ", "file", " ", "can", " ", "also", " ", "be", " ", 
+    "viewed", " ", "using", " ", "the", " ", "open", " ", "source", " ", 
+    "software", " ", 
+    RowBox[{"Meshlab", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "You", " ", "may", " ", "modify", " ", "this", " ", "code", " ", "in", " ",
+     "any", " ", "way", " ", "you", " ", 
+    RowBox[{"like", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "This", " ", "project", " ", "was", " ", "supported", " ", "by", " ", 
+    "the", " ", "National", " ", "Science", " ", "Foundation", " ", "through",
+     " ", "a", " ", "Supplement", " ", "to", " ", "the", " ", "UTeach", " ", 
+    "Dallas", " ", "Robert", " ", "Noyce", " ", "Scholarship", " ", "Program",
+     " ", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"DUE", " ", "1544159"}], ")"}], "."}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"scale", "=", "50"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"radius", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Surface", "[", 
+      RowBox[{"r_", ",", "theta_"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"scale", "*", "r", "*", 
+        RowBox[{"Cos", "[", "theta", "]"}]}], ",", 
+       RowBox[{"scale", "*", "r", "*", 
+        RowBox[{"Sin", "[", "theta", "]"}]}], ",", 
+       RowBox[{"scale", "*", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", "*", "theta"}], "]"}]}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rmin", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rmax", "=", "0.75"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"NumRays", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"numPoints", "=", "24"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"thetamin", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"thetamax", "=", 
+     RowBox[{"2", "*", "Pi"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"zAxis", "=", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"Surface", "[", 
+        RowBox[{"0", ",", "i"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "thetamin", ",", "thetamax"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"Tube", "[", "radius", "]"}]}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "numPoints"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"OuterCurve", "=", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"Surface", "[", 
+        RowBox[{"rmax", ",", "i"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "thetamin", ",", "thetamax"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"Tube", "[", "radius", "]"}]}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "numPoints"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"RaysTable", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"Surface", "[", 
+        RowBox[{"r", ",", "j"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "thetamin", ",", "thetamax", ",", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"thetamax", "-", "thetamin"}], ")"}], "/", "NumRays"}]}], 
+        "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Rays", "=", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{"RaysTable", ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", "rmin", ",", "rmax"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"Tube", "[", "radius", "]"}]}], ",", 
+       RowBox[{"PlotPoints", "\[Rule]", "numPoints"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Vertices", " ", "=", 
+     RowBox[{"Graphics3D", "[", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"Sphere", "[", 
+         RowBox[{
+          RowBox[{"Surface", "[", 
+           RowBox[{"i", ",", "j"}], "]"}], ",", "radius"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "rmin", ",", "rmax", ",", 
+          RowBox[{"rmax", "-", "rmin"}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"j", ",", "thetamin", ",", "thetamax", ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"thetamax", "-", "thetamin"}], ")"}], "/", "NumRays"}]}], 
+         "}"}]}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"SurfaceSheet", "=", 
+     RowBox[{"ParametricPlot3D", "[", 
+      RowBox[{
+       RowBox[{"Surface", "[", 
+        RowBox[{"r", ",", "theta"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"r", ",", "rmin", ",", "rmax"}], " ", "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"theta", ",", "thetamin", ",", 
+         RowBox[{"thetamax", "+", "0.2"}]}], "}"}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "False"}], ",", " ", 
+       RowBox[{"MaxRecursion", "\[Rule]", "4"}], ",", " ", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"Thickness", "[", "2.0", "]"}], "}"}]}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"output", "=", 
+    RowBox[{"Show", "[", 
+     RowBox[{"zAxis", ",", "OuterCurve", ",", "SurfaceSheet"}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Export", "[", 
+      RowBox[{"\"\<LimitDNEViaRaysSheet.stl\>\"", ",", "output"}], "]"}], 
+     ";"}], "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.6533184352995358`*^9, 3.653318693601184*^9}, {
+   3.653318728234758*^9, 3.65331873827678*^9}, {3.65386365697049*^9, 
+   3.653863928630947*^9}, {3.653863963211237*^9, 3.653864012211996*^9}, {
+   3.653864050946971*^9, 3.653864095092621*^9}, {3.653864132216771*^9, 
+   3.653864136751083*^9}, {3.6538641683488503`*^9, 3.653864264709442*^9}, {
+   3.653864297403577*^9, 3.653864307506858*^9}, {3.653864488538702*^9, 
+   3.653864559299158*^9}, {3.653864706425806*^9, 3.653864726461665*^9}, {
+   3.653864770783351*^9, 3.653864866556625*^9}, {3.6538649012417803`*^9, 
+   3.653864993680863*^9}, {3.6538650779038153`*^9, 3.6538651111805553`*^9}, {
+   3.653921771095078*^9, 3.653921779280788*^9}, {3.653921913994192*^9, 
+   3.653921949439889*^9}, {3.653921992467752*^9, 3.6539219939629602`*^9}, {
+   3.654528058500619*^9, 3.6545280650924892`*^9}, {3.654528116817912*^9, 
+   3.6545281403068113`*^9}, {3.6545281755454607`*^9, 
+   3.6545282069246817`*^9}, {3.657062081706574*^9, 3.657062102775648*^9}, {
+   3.6570621669771357`*^9, 3.6570621703287373`*^9}, {3.6570622795334473`*^9, 
+   3.6570623041149473`*^9}, 3.657062494907352*^9, {3.65706252921165*^9, 
+   3.657062803236228*^9}, {3.657062842972321*^9, 3.657062949574383*^9}, {
+   3.657062998014636*^9, 3.6570630004533443`*^9}, {3.657063042326501*^9, 
+   3.657063045142796*^9}, {3.657063201291318*^9, 3.6570632124266653`*^9}, {
+   3.657063243683593*^9, 3.657063249857567*^9}, {3.6570632827255898`*^9, 
+   3.6570633374941387`*^9}, {3.65706344932476*^9, 3.65706345002717*^9}, {
+   3.657063756439909*^9, 3.657063802396515*^9}, {3.6570638634063272`*^9, 
+   3.6570638645802107`*^9}, {3.657064171117179*^9, 3.657064176107747*^9}, {
+   3.657064339209641*^9, 3.6570643441998167`*^9}, {3.657064417960301*^9, 
+   3.657064465375207*^9}, {3.657064537133841*^9, 3.657064604667069*^9}, {
+   3.657064642577614*^9, 3.6570646734867773`*^9}, {3.6572959099139547`*^9, 
+   3.657295965269555*^9}, {3.657295995630328*^9, 3.6572960414693003`*^9}, 
+   3.657298738303261*^9, {3.657298793837397*^9, 3.657298823619198*^9}, {
+   3.6593762430795393`*^9, 3.6593762588871517`*^9}, {3.659376290882646*^9, 
+   3.659376302882923*^9}, {3.659376354527546*^9, 3.659376494949861*^9}, {
+   3.6593765607032433`*^9, 3.6593766365429173`*^9}, {3.659376686181201*^9, 
+   3.65937674147565*^9}, {3.659376773651416*^9, 3.6593767839865513`*^9}, {
+   3.659376940386755*^9, 3.6593769510581827`*^9}, {3.659377008709116*^9, 
+   3.659377061547413*^9}, {3.659377189395515*^9, 3.659377194859614*^9}, {
+   3.659377301769536*^9, 3.659377302728582*^9}, {3.659377368395348*^9, 
+   3.6593773752107563`*^9}, {3.662133444926352*^9, 3.6621334790665197`*^9}, {
+   3.672698494599697*^9, 3.672698500442676*^9}, {3.672701410905279*^9, 
+   3.6727014121878843`*^9}, {3.6727461118662367`*^9, 3.672746118863969*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.657298754244031*^9, 3.65729875427668*^9}}]
+},
+WindowSize->{808, 675},
+WindowMargins->{{Automatic, 114}, {Automatic, 79}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 10570, 229, 913, "Input"],
+Cell[11131, 251, 91, 1, 28, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
